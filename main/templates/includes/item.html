@@ -1,0 +1,29 @@
+{% load static %}
+
+<ul>
+    {% for item in items|dictsortreversed:"date"  %}
+        <li>
+        <div class="inner">
+            <div class="image_wrap">
+                <img src={% static 'img/news/1000x600.jpg' %} alt="" /> 
+                <div class="main_image" data-img-url={{ item.img.url}}></div>
+                <a class="full_link" href="{% url 'news_detail' item.slug %}"></a>
+            </div>
+            <div class="descriptions_wrap">
+                <div class="date_wrap">
+                    <span>{{ item.date}} in <a href="#">{{ item.category }}</a></span>
+                </div>
+                <div class="title">
+                    <a href="{% url 'news_detail' item.slug %}"><h3>{{ item.title|title }}</h3></a>
+                </div>
+                <div class="text">
+                    <p>{{ item.desc|truncatechars:90 }}</p>
+                </div>
+                <div class="lexal_tm_button">
+                    <a href="{%url 'news_detail' item.slug %}"><span>Read More</span></a>
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,23 @@
+{% load static %}
+
+<li>
+    <div class="title_holder">
+        <h3>Categories</h3>
+    </div>
+    <div class="list_wrap">
+        <ul>
+            {% for cat in categories %}
+            <li>
+                <div class="inner">
+                    <div class="left">
+                        <a href="#">{{cat.name|title}}</a>
+                    </div>
+                    <div class="right">
+                        <span>({{ cat.posts.count }})</span>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</li>
