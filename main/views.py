@@ -1,30 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from json import dumps
 from .models import News, Category, Project
-# Create your views here.
-test = {
-    "portfolio": [
-        {
-            "title" : "Osama essam",
-            "imgUrl": "/static/img/portfolio/7.jpg",
-            "subTitle": "Photography",
-            "pageURL": "portfolio-single-7.html"
-        },
-        {
-            "title": "Omar El-Hbrouk",
-            "imgUrl": "/static/img/portfolio/8.jpg",
-            "subTitle": "Design",
-            "pageURL": "portfolio-single-8.html"
-        },
-        {
-            "title": "Hello Project",
-            "imgUrl": "/static/img/portfolio/9.jpg",
-            "subTitle": "NaN",
-            "pageURL": "portfolio-single-8.html"
-        }
 
-    ]
-}
+# Create your views here.
 
 ############## Main ##############
 
