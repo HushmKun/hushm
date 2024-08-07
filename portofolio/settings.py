@@ -14,7 +14,7 @@ except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
 
-ALLOWED_HOSTS = ["102.37.155.84", 'hushm.southafricanorth.cloudapp.azure.com']
+ALLOWED_HOSTS = ["Hushm.pythonanywhere.com"]
 
 if DEBUG : 
     ALLOWED_HOSTS.append('*')
