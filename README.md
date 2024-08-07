@@ -1,5 +1,5 @@
 
-![Logo](https://hushm.southafricanorth.cloudapp.azure.com/static/img/logo/logo.png)
+![Logo](.\static\img\logo\logo.png)
 
 
 # Portfolio

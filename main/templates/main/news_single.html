@@ -1,272 +1,179 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 {% load markdown_extra %}
-
-
 {% block page_title %}
-Hussein | {{ news.title }}
-{% endblock page_title %} 
- 
+    Hussein | {{ news.title }}
+{% endblock page_title %}
 {% block content %}
-
-<!-- WRAPPER ALL -->
-<div class="lexal_tm_all_wrap">
-	<div class="lexal_tm_border left"></div>
-	<div class="lexal_tm_border right"></div>
-
-	{% include "includes/border_top.html" %}
-	{% include "includes/border_bottom.html" %}
-	{% include "includes/menu.html" %}
-	
-	<!-- HERO -->
-	<div class="lexal_tm_home_hero" id="home">
-		<div class="image" data-img-url= {{ news.img.url}}></div>
-		<div class="overlay"></div>
-		<div class="overlay_texts">
-			<h3 class="name">{{ news.title|title}}</h3>
-		</div>
-		<div class="lexal_tm_down anchor">
-			<div class="down-icon white top_120">
-				<a href="#single">
-					<svg width="26px" height="100%" viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-						<path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-						<path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- /HERO -->
-	
-	<div class="lexal_tm_wrap_inner">
-		
-		<!-- NEWS SINGLE -->
-		<div class="container">
-			<div class="lexal_tm_flex_box">
-				<div class="flex_left">
-					<div class="lexal_tm_news_single_wrap" id="single">
-						<div class="news_content lexal_tm_waypoint_effect">
-							<div class="short_details">
-								<ul>
-									<li><img class="svg" src= {%  static 'img/svg/calendar.svg' %} alt="" /><span>{{ news.date }}</span></li>
-									<li><img class="svg" src= {%  static 'img/svg/add-contact.svg' %} alt="" /><span><a href="{% url 'home' %}">Hussein Mukhtar</a></span></li>
-									<li><img class="svg" src= {%  static 'img/svg/comment.svg' %} alt="" /><span><a href="#">5 Comments</a></span></li>
-									<li><img class="svg" src= {%  static 'img/svg/1111.svg' %} alt="" /><span><a href="#">{{ news.category}}</a></span></li>
+    <!-- WRAPPER ALL -->
+    <div class="lexal_tm_all_wrap">
+        <div class="lexal_tm_border left"></div>
+        <div class="lexal_tm_border right"></div>
+        {% include "includes/border_top.html" %}
+        {% include "includes/border_bottom.html" %}
+        {% comment %} {% include "includes/menu.html" %} {% endcomment %}
+        <!-- HERO -->
+        <div class="lexal_tm_home_hero" id="home">
+            <div class="image" data-img-url={{ news.img.url }}>
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay_texts">
+                <h3 class="name">{{ news.title|title }}</h3>
+            </div>
+            <div class="lexal_tm_down anchor">
+                <div class="down-icon white top_120">
+                    <a href="#single">
+                        <svg width="26px"
+                             height="100%"
+                             viewBox="0 0 247 390"
+                             version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             style="fill-rule:evenodd;
+                                    clip-rule:evenodd;
+                                    stroke-linecap:round;
+                                    stroke-linejoin:round;
+                                    stroke-miterlimit:1.5">
+                            <path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                            <path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /HERO -->
+        <div class="lexal_tm_wrap_inner">
+            <!-- NEWS SINGLE -->
+            <div class="container">
+                <div class="lexal_tm_flex_box">
+                    <div class="flex_left">
+                        <div class="lexal_tm_news_single_wrap" id="single">
+                            <div class="news_content lexal_tm_waypoint_effect">
+                                <div class="short_details">
+                                    <ul>
+                                        <li>
+                                            <img class="svg" src={% static 'img/svg/calendar.svg' %} alt="" />
+                                            <span>{{ news.date }}</span>
+                                        </li>
+                                        <li>
+                                            <img class="svg" src={% static 'img/svg/add-contact.svg' %} alt="" />
+                                            <span><a href="{% url 'home' %}">Hussein Mukhtar</a></span>
+                                        </li>
+                                        <li>
+                                            <img class="svg" src={% static 'img/svg/comment.svg' %} alt="" />
+                                            <span><a href="#">5 Comments</a></span>
+                                        </li>
+                                        <li>
+                                            <img class="svg" src={% static 'img/svg/1111.svg' %} alt="" />
+                                            <span><a href="#">{{ news.category }}</a></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="desriptions_wrap">
+                                    <p>{{ news.content| markdown | safe }}</p>
+                                    <div class="content_image">
+                                        <ul>
+                                            <li>
+                                                <div class="inner">
+                                                    <div class="image_wrap">
+                                                        <img src={% static 'img/news/1000x500.jpg' %} alt="" />
+                                                        <div class="image" data-img-url={% static 'img/news/1.jpg' %}></div>
+                                                        <div class="overlay"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="inner">
+                                                    <div class="image_wrap">
+                                                        <img src={% static 'img/news/1000x500.jpg' %} alt="" />
+                                                        <div class="image" data-img-url={% static 'img/news/1.jpg' %}></div>
+                                                        <div class="overlay"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lexal_tm_commentbox_wrap">
+                                <div class="inner_wrap">
+                                    <div class="desriptions_wrap">
+                                        <div class="title">
+                                            <h3>1 Comment</h3>
+                                        </div>
+                                        <div class="comment_texts">
+                                            <div class="wp">
+                                                <div class="avatar"></div>
+                                                <h3>
+                                                    <a href="#">A WordPress Commenter</a>
+                                                </h3>
+                                                <span class="date">February 01, 2019</span>
+                                                <p class="text">
+                                                    Hi, this is a comment.
+                                                    <br />
+                                                    To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from <a href="#">Gravatar</a>.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reply_comment_wrap">
+                                        <div class="title">
+                                            <h3>Leave a Reply</h3>
+                                        </div>
+                                        <div class="input_list_wrap">
+                                            <form action="{% url 'home' %}" method="post" class="contact_form" id="contact_form">
+                                                <div class="input_row">
+                                                    <input type="text" placeholder="Name" />
+                                                </div>
+                                                <div class="input_row">
+                                                    <input type="text" placeholder="E-mail" />
+                                                </div>
+                                                <div class="input_row">
+                                                    <input type="text" placeholder="Website" />
+                                                </div>
+                                                <div class="input_row">
+                                                    <textarea placeholder="Comment"></textarea>
+                                                </div>
+                                                <div class="lexal_tm_button no_animation">
+                                                    <a href="#"><span>Submit</span></a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex_right">
+                        <div class="lexal_tm_sidebar_wrap">
+                            <div class="search_wrap">
+                                <input type="text" placeholder="Search" />
+                                <img class="svg" src={% static 'img/svg/search.svg' %} alt="" />
+                                <input type="submit" value="" />
+                            </div>
+                            <div class="sidebar_list_wrap">
+                                <ul class="ul">
+                                    <li>
+                                        <div class="title_holder">
+                                            <h3>About Author</h3>
+                                        </div>
+                                        <div class="author_image">
+                                            <img src={% static 'img/about/2.jpg' %} alt="" />
+                                        </div>
+                                        <div class="description">
+                                            <p>I'm a software engineer and web developer. I build awesome websites. 🚀</p>
+                                        </div>
+                                    </li>
+                                    {% include "includes/latest_posts.html" with latest=latest %}
+                                    {% include "includes/categories.html" with categories=categories %}
 								</ul>
-							</div>
-							<div class="desriptions_wrap">
-								<p>{{ news.content| markdown | safe }} </p>
-								<div class="content_image">
-									<ul>
-										<li>
-											<div class="inner">
-												<div class="image_wrap">
-													<img src= {%  static 'img/news/1000x500.jpg' %} alt="" />
-													<div class="image" data-img-url= {%  static 'img/news/2.jpg' %}></div>
-													<div class="overlay"></div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="inner">
-												<div class="image_wrap">
-													<img src= {%  static 'img/news/1000x500.jpg' %} alt="" />
-													<div class="image" data-img-url= {%  static 'img/news/3.jpg' %}></div>
-													<div class="overlay"></div>
-												</div>
-											</div>
-										</li> 
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="lexal_tm_commentbox_wrap">
-							<div class="inner_wrap">
-								<div class="desriptions_wrap">
-									<div class="title"><h3>1 Comment</h3></div>
-									<div class="comment_texts">
-										<div class="wp">
-											<div class="avatar"></div>
-											<h3><a href="#">A WordPress Commenter</a></h3>
-											<span class="date">February 01, 2019</span>
-											<p class="text">Hi, this is a comment.<br />To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard. Commenter avatars come from <a href="#">Gravatar</a>.</p>
-										</div>
-									</div>
-								</div>
-								<div class="reply_comment_wrap">
-									<div class="title"><h3>Leave a Reply</h3></div>
-									<div class="input_list_wrap">
-										<form action="/" method="post" class="contact_form" id="contact_form">
-											<div class="input_row">
-												<input type="text" placeholder="Name" />
-											</div>
-											<div class="input_row">
-												<input type="text" placeholder="E-mail" />
-											</div>
-											<div class="input_row">
-												<input type="text" placeholder="Website" />
-											</div>
-											<div class="input_row">
-												<textarea placeholder="Comment"></textarea>
-											</div>
-											<div class="lexal_tm_button no_animation">
-												<a href="#"><span>Submit</span></a>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="flex_right">
-					<div class="lexal_tm_sidebar_wrap">
-						<div class="search_wrap">
-							<input type="text" placeholder="Search" />
-							<img class="svg" src= {%  static 'img/svg/search.svg' %} alt="" />
-							<input type="submit" value="" />
-						</div>
-						<div class="sidebar_list_wrap">
-							<ul class="ul">
-								<li>
-									<div class="title_holder">
-										<h3>About Author</h3>
-									</div>
-									<div class="author_image"><img src= {%  static 'img/about/2.jpg' %} alt="" /></div>
-									<div class="description">
-										<p>I'm a software engineer and web developer. I build awesome websites. 🚀</p>
-									</div>
-								</li>
-								{% include 'includes/latest_posts.html' with latest=latest %}
-								{% comment %} <li>
-									<div class="title_holder">
-										<h3>Archives</h3>
-									</div>
-									<div class="list_wrap">
-										<ul>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">April 2019</a>
-													</div>
-													<div class="right">
-														<span>(04)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">March 2019</a>
-													</div>
-													<div class="right">
-														<span>(06)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">February 2019</a>
-													</div>
-													<div class="right">
-														<span>(02)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">January 2019</a>
-													</div>
-													<div class="right">
-														<span>(03)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">December 2019</a>
-													</div>
-													<div class="right">
-														<span>(01)</span>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</li> {% endcomment %}
-								{% comment %} <li>
-									<div class="title_holder">
-										<h3>Categories</h3>
-									</div>
-									<div class="list_wrap">
-										<ul>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">Branding</a>
-													</div>
-													<div class="right">
-														<span>(05)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">Photography</a>
-													</div>
-													<div class="right">
-														<span>(02)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">Development</a>
-													</div>
-													<div class="right">
-														<span>(03)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">Nature</a>
-													</div>
-													<div class="right">
-														<span>(01)</span>
-													</div>
-												</div>
-											</li>
-											<li>
-												<div class="inner">
-													<div class="left">
-														<a href="#">Lifestyle</a>
-													</div>
-													<div class="right">
-														<span>(04)</span>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul> {% endcomment %}
-							{% include 'includes/categories.html' with categories=categories %}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /NEWS SINGLE -->
-		
-	</div>	
-</div>
-<!-- / WRAPPER ALL -->
-
-{% endblock content %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /NEWS SINGLE -->
+            </div>
+        </div>
+        <!-- / WRAPPER ALL -->
+    {% endblock content %}

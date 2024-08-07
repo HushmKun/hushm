@@ -1,270 +1,296 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block page_title %}Hussein | News{% endblock page_title %}
-
+{% block page_title %}
+    Hussein | News
+{% endblock page_title %}
 {% block content %}
-
-<!-- WRAPPER ALL -->
-<div class="lexal_tm_all_wrap">
-	<div class="lexal_tm_border left"></div>
-	<div class="lexal_tm_border right"></div>
-
-	{% include 'includes/border_top.html' %}
-	{% include 'includes/border_bottom.html' %}
-	{% include 'includes/menu.html' %}
-	
-	
-	
-	<!-- HERO -->
-	<div class="lexal_tm_home_hero" id="home">
-		<div class="image jarallax" data-speed="0.2" data-img-url= {% static 'img/slider/2.jpg'%}></div>
-		<div class="overlay"></div>
-		<div class="overlay_texts">
-			<h3 class="name">Latest News</h3>
-			<p class="subtitle">Check out our latest news</p>
-		</div>
-		<div class="lexal_tm_down anchor">
-			<div class="down-icon white top_120">
-				<a href="#news">
-					<svg width="26px" height="100%" viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-						<path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-						<path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- /HERO -->
-	
-	<div class="lexal_tm_wrap_inner">
-		
-		<!-- NEWS LIST -->
-		<div class="lexal_tm_section" id="news">
-			<div class="container">
-				<div class="lexal_tm_flex_box">
-					<div class="flex_left">
-						<div class="lexal_tm_news_list_wrap lexal_tm_waypoint_effect">
-							<ul>
-								{% include 'includes/item.html' with items=news %}
-							</ul>
-							<div class="news_load_more_button">
-								<a href="#">Load More</a>
-							</div>
-						</div>
-					</div>
-					<div class="flex_right">
-						<div class="lexal_tm_sidebar_wrap">
-							<div class="search_wrap">
-								<input type="text" placeholder="Search" />
-								<img class="svg" src={% static 'img/svg/search.svg' %} alt="" />
-								<input type="submit" value="" />
-							</div>
-							<div class="sidebar_list_wrap">
-								<ul class="ul">
-									<li>
-										<div class="title_holder">
-											<h3>About Author</h3>
-										</div>
-										<div class="author_image"><img src={% static 'img/about/2.jpg' %} alt="" /></div>
-										<div class="description">
-											<p>I'm a graphic designer and web developer from Tokyo, Japan. I hold a master degree of Design from World University.</p>
-										</div>
-									</li>
-									<li>
-										<div class="title_holder">
-											<h3>Latest Posts</h3>
-										</div>
-										<div class="posts_list">
-											<ul>
-												<li>
-													<div class="inner">
-														<div class="post_image">
-															<img src={% static 'img/news/300x200.jpg' %} alt="" />
-															<div class="image" data-img-url= {% static 'img/news/1.jpg'%}></div>
-															<div class="overlay_post"></div>
-														</div>
-														<div class="title_date">
-															<h3><a href="#">Sample Image Post</a></h3>
-															<span>January 22, 2019</span>
-														</div>
-														<a class="lexal_tm_post_full_link" href="#"></a>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="post_image">
-															<img src={% static 'img/news/300x200.jpg' %} alt="" />
-															<div class="image" data-img-url= {% static 'img/news/2.jpg'%}></div>
-															<div class="overlay_post"></div>
-														</div>
-														<div class="title_date">
-															<h3><a href="#">Sample Image Post</a></h3>
-															<span>February 07, 2019</span>
-														</div>
-														<a class="lexal_tm_post_full_link" href="#"></a>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="post_image">
-															<img src={% static 'img/news/300x200.jpg' %} alt="" />
-															<div class="image" data-img-url= {% static 'img/news/3.jpg'%}></div>
-															<div class="overlay_post"></div>
-														</div>
-														<div class="title_date">
-															<h3><a href="#">Sample Image Post</a></h3>
-															<span>April 02, 2019</span>
-														</div>
-														<a class="lexal_tm_post_full_link" href="#"></a>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<div class="title_holder">
-											<h3>Archives</h3>
-										</div>
-										<div class="list_wrap">
-											<ul>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">April 2019</a>
-														</div>
-														<div class="right">
-															<span>(04)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">March 2019</a>
-														</div>
-														<div class="right">
-															<span>(06)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">February 2019</a>
-														</div>
-														<div class="right">
-															<span>(02)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">January 2019</a>
-														</div>
-														<div class="right">
-															<span>(03)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">December 2019</a>
-														</div>
-														<div class="right">
-															<span>(01)</span>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<div class="title_holder">
-											<h3>Tags</h3>
-										</div>
-										<div class="tags">
-											<ul>
-												<li><a href="#">Design</a></li>
-												<li><a href="#">Branding</a></li>
-												<li><a href="#">Lifestyle</a></li>
-												<li><a href="#">Fashion</a></li>
-												<li><a href="#">Nature</a></li>
-												<li><a href="#">Models</a></li>
-											</ul>
-										</div>
-									</li>
-									<li>
-										<div class="title_holder">
-											<h3>Categories</h3>
-										</div>
-										<div class="list_wrap">
-											<ul>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">Branding</a>
-														</div>
-														<div class="right">
-															<span>(05)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">Photography</a>
-														</div>
-														<div class="right">
-															<span>(02)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">Development</a>
-														</div>
-														<div class="right">
-															<span>(03)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">Nature</a>
-														</div>
-														<div class="right">
-															<span>(01)</span>
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="inner">
-														<div class="left">
-															<a href="#">Lifestyle</a>
-														</div>
-														<div class="right">
-															<span>(04)</span>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>			
-		</div>
-		<!-- /NEWS LIST -->
-		
-	</div>	
-</div>
-<!-- / WRAPPER ALL -->
+    <!-- WRAPPER ALL -->
+    <div class="lexal_tm_all_wrap">
+        <div class="lexal_tm_border left"></div>
+        <div class="lexal_tm_border right"></div>
+        {% include 'includes/border_top.html' %}
+        {% include 'includes/border_bottom.html' %}
+        {% comment %} {% include 'includes/menu.html' %} {% endcomment %}
+        <!-- HERO -->
+        <div class="lexal_tm_home_hero" id="home">
+            <div class="image jarallax"
+                 data-speed="0.2"
+                 data-img-url="{% static 'img/slider/news.jpg' %}"></div>
+            <div class="overlay"></div>
+            <div class="overlay_texts">
+                <h3 class="name">Latest News</h3>
+                <p class="subtitle">Check out our latest news</p>
+            </div>
+            <div class="lexal_tm_down anchor">
+                <div class="down-icon white top_120">
+                    <a href="#news">
+                        <svg width="26px"
+                             height="100%"
+                             viewBox="0 0 247 390"
+                             version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             style="fill-rule:evenodd;
+                                    clip-rule:evenodd;
+                                    stroke-linecap:round;
+                                    stroke-linejoin:round;
+                                    stroke-miterlimit:1.5">
+                            <path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                            <path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /HERO -->
+        <div class="lexal_tm_wrap_inner">
+            <!-- NEWS LIST -->
+            <div class="lexal_tm_section" id="news">
+                <div class="container">
+                    <div class="lexal_tm_flex_box">
+                        <div class="flex_left">
+                            <div class="lexal_tm_news_list_wrap lexal_tm_waypoint_effect">
+                                <ul>
+                                    {% include 'includes/item.html' with items=news %}
+                                </ul>
+                                <div class="news_load_more_button">
+                                    <a href="#">Load More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex_right">
+                            <div class="lexal_tm_sidebar_wrap">
+                                <div class="search_wrap">
+                                    <input type="text" placeholder="Search" />
+                                    <img class="svg" src={% static 'img/svg/search.svg' %} alt="" />
+                                    <input type="submit" value="" />
+                                </div>
+                                <div class="sidebar_list_wrap">
+                                    <ul class="ul">
+                                        <li>
+                                            <div class="title_holder">
+                                                <h3>About Author</h3>
+                                            </div>
+                                            <div class="author_image">
+                                                <img src={% static 'img/about/2.jpg' %} alt="" />
+                                            </div>
+                                            <div class="description">
+                                                <p>
+                                                    I'm a graphic designer and web developer from Tokyo, Japan. I hold a master degree of Design from World University.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title_holder">
+                                                <h3>Latest Posts</h3>
+                                            </div>
+                                            <div class="posts_list">
+                                                <ul>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="post_image">
+                                                                <img src={% static 'img/news/300x200.jpg' %} alt="" />
+                                                                <div class="image" data-img-url= {% static 'img/news/1.jpg' %}></div>
+                                                                <div class="overlay_post"></div>
+                                                            </div>
+                                                            <div class="title_date">
+                                                                <h3>
+                                                                    <a href="#">Sample Image Post</a>
+                                                                </h3>
+                                                                <span>January 22, 2019</span>
+                                                            </div>
+                                                            <a class="lexal_tm_post_full_link" href="#"></a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="post_image">
+                                                                <img src={% static 'img/news/300x200.jpg' %} alt="" />
+                                                                <div class="image" data-img-url= {% static 'img/news/1.jpg' %}></div>
+                                                                <div class="overlay_post"></div>
+                                                            </div>
+                                                            <div class="title_date">
+                                                                <h3>
+                                                                    <a href="#">Sample Image Post</a>
+                                                                </h3>
+                                                                <span>February 07, 2019</span>
+                                                            </div>
+                                                            <a class="lexal_tm_post_full_link" href="#"></a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="post_image">
+                                                                <img src={% static 'img/news/300x200.jpg' %} alt="" />
+                                                                <div class="image" data-img-url= {% static 'img/news/1.jpg' %}></div>
+                                                                <div class="overlay_post"></div>
+                                                            </div>
+                                                            <div class="title_date">
+                                                                <h3>
+                                                                    <a href="#">Sample Image Post</a>
+                                                                </h3>
+                                                                <span>April 02, 2019</span>
+                                                            </div>
+                                                            <a class="lexal_tm_post_full_link" href="#"></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title_holder">
+                                                <h3>Archives</h3>
+                                            </div>
+                                            <div class="list_wrap">
+                                                <ul>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">April 2019</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(04)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">March 2019</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(06)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">February 2019</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(02)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">January 2019</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(03)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">December 2019</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(01)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title_holder">
+                                                <h3>Tags</h3>
+                                            </div>
+                                            <div class="tags">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Design</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Branding</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Lifestyle</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Fashion</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Nature</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Models</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title_holder">
+                                                <h3>Categories</h3>
+                                            </div>
+                                            <div class="list_wrap">
+                                                <ul>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">Branding</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(05)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">Photography</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(02)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">Development</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(03)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">Nature</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(01)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="inner">
+                                                            <div class="left">
+                                                                <a href="#">Lifestyle</a>
+                                                            </div>
+                                                            <div class="right">
+                                                                <span>(04)</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /NEWS LIST -->
+        </div>
+    </div>
+    <!-- / WRAPPER ALL -->
 {% endblock content %}

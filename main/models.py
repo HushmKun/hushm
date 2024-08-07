@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from markdownx.models import MarkdownxField
-
-# Create your models here.
+from django.shortcuts import reverse
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
@@ -13,10 +12,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
-
-    def get_absolute_url(self):
-        return reverse("category_detail", kwargs={"pk": self.pk})
 
 class News(models.Model):
 
@@ -36,7 +31,7 @@ class News(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("news_detail", kwargs={"pk": self.pk})
+        return reverse("news_detail", args=[self.slug])
 
 class Project(models.Model):
 
@@ -58,5 +53,5 @@ class Project(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("Project_detail", kwargs={"pk": self.pk})
+        return reverse("Project_detail", args=[slug])
 

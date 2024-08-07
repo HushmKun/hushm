@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	// here all ready functions
 	
 	ajaxCustom();  				//* Done
-	lexal_tm_menu();			//* Done
 	lexal_tm_about_hero();		//* Done
 	lexal_tm_imgtosvg();		//* Done 
 	lexal_tm_hero_overlay();	//* Done
@@ -14,7 +13,12 @@ document.addEventListener('DOMContentLoaded', function(){
 	lexal_tm_data_images();		//* Done
 	lexal_tm_contact_form();	//! Untested
 	lexal_tm_magnific_popup();	//? Not sure if possible
-	lexal_tm_anchor();			//* Done
+	try {
+		lexal_tm_menu();			//* Done
+		lexal_tm_anchor();			//* Done
+	} catch (error) {
+		;
+	}
 	lexal_tm_animate_text();	//? Not Possible
 	lexal_tm_animate_signture(); //* Done
 	lexal_tm_waypoints();		//* Done
@@ -82,10 +86,6 @@ function ajaxCustom() {
   }
   
 	
-// -----------------------------------------------------
-// -----------------    NENU    ------------------------
-// -----------------------------------------------------	
-	
 function lexal_tm_menu(){
 	
 	"use strict";
@@ -127,6 +127,7 @@ function lexal_tm_menu(){
 });
 
 }
+
 
 // -----------------------------------------------------
 // -----------------    ABOUT HERO    ------------------
@@ -315,7 +316,14 @@ function lexal_tm_anchor() {
   
 	anchorLinks.forEach(link => {
 	  link.addEventListener('click', function(event) {
-		event.preventDefault();
+		if( window.location.pathname=="/" ){
+			event.preventDefault();
+			console.log("Home");
+		}
+		else{
+			console.log("Not Home");
+			return;
+		}
   
 		const currentActive = navigation.querySelector('.current');
 		if (currentActive) {
@@ -452,6 +460,7 @@ function lexal_tm_waypoints() {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('load');
+				
 				observer.unobserve(entry.target); 
 			}
 		});

@@ -1,237 +1,249 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-
-{% block page_title %}Hussein | Home{% endblock page_title %}
-
+{% block page_title %}
+    Hussein | Home
+{% endblock page_title %}
 {% block content %}
-
-<!-- WRAPPER ALL -->
-<div class="lexal_tm_all_wrap">
-
-	<div class="lexal_tm_border left"></div>
-	<div class="lexal_tm_border right"></div>
-
-	{% include 'includes/border_top.html' %} 
-	{% include 'includes/border_bottom.html' %} 
-	{% include 'includes/menu.html' %} 
-	
-	<!-- HERO -->
-	<div class="lexal_tm_home_hero" id="home">
-		<div class="image" data-speed="0.7" data-img-url={% static "img/slider/4K Wallpaper.png" %}></div>
-		<div class="overlay"></div>
-		<div class="overlay_texts">
-			<h3 class="name">Hussein Mukhtar</h3>
-			<div class="text_typing">
-				<p>I'm a <span class="lexal_tm_animation_text_word"></span></p>
-			</div>
-		</div>
-		<div class="lexal_tm_down anchor">
-			<div class="down-icon white top_120">
-				<a href="#about">
-					<svg width="26px" height="100%" viewBox="0 0 247 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-						<path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-						<path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;"/>
-					</svg>
-				</a>
-			</div>
-		</div>
-	</div>
-	<!-- /HERO -->
-	
-	<div class="lexal_tm_wrap_inner">
-		<!-- ABOUT -->
-		<div class="lexal_tm_section" id="about">
-			<div class="container">
-				<div class="lexal_tm_about_wrap lexal_tm_waypoint_effect2">
-					<div class="img_box">
-						<div class="author_img">
-							<img src={% static 'img/about/550x650.jpg' %} alt="" />
-							<div class="main_image"></div>
-						</div>
-					</div>
-					<div class="description_box">
-						<div class="lexal_tm_main_title hero">
-							<span>About my carrer</span>
-							<h3>Hi! I'm Hussein (aka Hushm), here to build awesome websites and make code magic happen! 💻✨</h3>
-						</div>
-						<div class="main_info">
-							<p>Hi! I'm Hussein (aka Hushm), your Sinai-based software engineer and web dev! ✨ I've got a thing for building awesome websites, making code magic happen, and even dabbling in UI/UX & graphic design. Oh, and a Computer Science degree from Suez University to prove it! 😉</p>
-							<p>Got a website that needs a revamp? An app idea you're itching to launch? Let's team up! I'll bring the coding skills, the design eye, and a whole lot of enthusiasm to turn your vision into a digital reality.  Let's chat and see what we can build together! 🚀</p>
-							<div class="sign">
-								<img class="svg custom"  src={% static 'img/sign/Hussein Mukhtar.svg' %} alt="" />
-							</div>
-							<div class="lexal_tm_button">
-								<a href="#"><span>Download CV</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /ABOUT -->
-
-		<!-- SERVICES -->
-		<div class="lexal_tm_section" id="services">
-			<div class="container">
-				<div class="lexal_tm_main_title">
-					<span>Awesome services</span>
-					<h3>I gurantee you a high quality services</h3>
-				</div>
-				<div class="lexal_tm_services lexal_tm_waypoint_effect">
-					<ul>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/python.svg' %} alt="" />
-								<h3>Python</h3>
-								<p>Seasoned Pythonista crafting elegant solutions, from data wrangling to web development.</p>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/django.svg' %} alt="" />
-								<h3>Django</h3>
-								<p>Building clean and maintainable web applications, harnessing the framework's power.</p>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/arch.svg' %} alt="" />
-								<h3>Linux & Deployment</h3>
-								<p>Linux guru and deployment ninja, automating development to production.</p>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/figma.svg' %} alt="" />
-								<h3>Figma</h3>
-								<p>Crafting visually stunning and intuitive user experiences, Emphasizes both and artistic touch.</p>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/web.svg' %} alt="" />
-								<h3>HTML, CSS & JS </h3>
-								<p>Maestro sculpting pixel-perfect interfaces, combining structural precision with visual flair.</p>
-							</div>
-						</li>
-						<li>
-							<div class="inner">
-								<img class="svg" src={% static 'img/svg/teamwork.svg' %} alt="" />
-								<h3>Team Work</h3>
-								<p>Seamlessly integrating with diverse work styles, prioritizing shared goals over individual gain.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- /SERVICES -->
-
-		<!-- PROJECTS -->
-		<div class="lexal_tm_section" id="portfolio">
-			<div class="container">
-				<div class="lexal_tm_main_title">
-					<span>Creative Projects</span>
-					<h3>Check out my latest projects</h3>
-					<a href={% url 'project_list' %}><h6>See More <i class="fa-solid fa-arrow-right"></i></h6></a>
-				</div>
-				<div class="lexal_tm_projects_wrap lexal_tm_waypoint_effect">
-					{% include 'includes/projects.html' with projects=projects%}
-					<div class="lexal_tm_load_more projects_load_more">
-						<div class="inner">
-							<a href="#"><span>Load More</span><img class="svg" src={% static 'img/svg/spinner.svg' %} alt="" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /PROJECTS -->
-
-		<!-- NEWS -->
-		<div class="lexal_tm_section" id="news">
-			<div class="container">
-				<div class="lexal_tm_main_title">
-					<span>Latest News</span>
-					<h3>Check out my latest news</h3>
-					<a href={% url 'news_list' %}><h6>See More <i class="fa-solid fa-arrow-right"></i></h6></a>
-				</div>
-				<div class="lexal_tm_news_wrap lexal_tm_waypoint_effect">
-					{% include 'includes/item.html' with items=news %}
-				</div>
-			</div>
-			<div class="lexal_tm_load_more news_view_more">
-				<div class="inner">
-					<a href={% url 'news_list' %}><span>View More</span><img class="svg" src={% static 'img/svg/spinner.svg' %} alt="" /></a>
-				</div>
-			</div>
-		</div>
-		<!-- /NEWS -->
-		
-		<!-- CONTACT -->
-		<div class="lexal_tm_section" id="contact">
-			<div class="container">
-				<div class="lexal_tm_main_title contact ">
-					<span>Contact me</span>
-					<h3>Get in touch with me</h3>
-				</div>
-				<div class="lexal_tm_contact_wrap lexal_tm_waypoint_effect">
-					<div class="leftpart">
-						<ul>
-							<li>
-								<div class="inner">
-									<span><a href="tel:+201069115579">(+20) 10 6911 5579</a></span>
-									<img class="svg" src={% static 'img/svg/telephone.svg' %} alt="" />
-								</div>
-							</li>
-							<li>
-								<div class="inner">
-									<span><a href="mailto:HushmKun@outlook.com">HushmKun@outlook.com</a></span>
-									<img class="svg" src={% static 'img/svg/envelope.svg' %} alt="" />
-								</div>
-							</li>
-							<li>
-								<div class="inner">
-									<span><a href="https://x.com/Hushm_Kun">@Hushm_Kun</a></span>
-									<img class="svg" src={% static 'img/svg/twitter.svg' %} alt="" />
-								</div>
-							</li>
-							<li>
-								<div class="inner">
-									<span><a href="https://github.com/HushmKun">@HushmKun</a></span>
-									<img class="svg" src={% static 'img/svg/github.svg' %} alt="" />
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="rightpart">
-						<div class="contact_list_wrap">
-							<form action="/" method="post" class="contact_form" id="contact_form">
-								<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
-								<div class="empty_notice"><span>Please Fill Required Fields</span></div>
-								<div class="first_row">
-									<div class="first">
-										<input id="name" type="text" placeholder="Your Name" />
-									</div>
-									<div class="second">
-										<input id="email" type="text" placeholder="Your Email" />
-									</div>
-								</div>
-								<div class="second_row">
-									<textarea id="message" placeholder="Your Message"></textarea>
-								</div>
-								<div class="lexal_tm_button">
-									<a id="send_message" href="#"><span>Submit</span></a>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /CONTACT -->
-		
-	</div>	
-</div>
-<!-- / WRAPPER ALL -->
-
+    <!-- WRAPPER ALL -->
+    <div class="lexal_tm_all_wrap">
+        <div class="lexal_tm_border left"></div>
+        <div class="lexal_tm_border right"></div>
+        {% include "includes/border_top.html" %}
+        {% include "includes/border_bottom.html" %}
+        {% include "includes/menu.html" %}
+        <!-- HERO -->
+        <div class="lexal_tm_home_hero" id="home">
+            <div class="image"
+                 data-speed="0.7"
+                 data-img-url="{% static "img/slider/index.png" %}"></div>
+            <div class="overlay"></div>
+            <div class="overlay_texts">
+                <h3 class="name">Hussein Mukhtar</h3>
+                <div class="text_typing">
+                    <p>
+                        I'm a <span class="lexal_tm_animation_text_word"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="lexal_tm_down anchor">
+                <div class="down-icon white top_120">
+                    <a href="#about">
+                        <svg width="26px"
+                             height="100%"
+                             viewBox="0 0 247 390"
+                             version="1.1"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             style="fill-rule:evenodd;
+                                    clip-rule:evenodd;
+                                    stroke-linecap:round;
+                                    stroke-linejoin:round;
+                                    stroke-miterlimit:1.5">
+                            <path id="wheel" d="M123.359,79.775l0,72.843" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                            <path id="mouse" d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z" style="fill:none;stroke:#fff;stroke-width:20px;" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /HERO -->
+        <div class="lexal_tm_wrap_inner">
+            <!-- ABOUT -->
+            <div class="lexal_tm_section" id="about">
+                <div class="container">
+                    <div class="lexal_tm_about_wrap lexal_tm_waypoint_effect2">
+                        <div class="img_box">
+                            <div class="author_img">
+                                <img src={% static "img/about/550x650.jpg" %} alt="" />
+                                <div class="main_image"></div>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <div class="lexal_tm_main_title hero">
+                                <span>About my carrer</span>
+                                <h3>Hi! I'm Hussein (aka Hushm), here to build awesome websites and make code magic happen! 💻✨</h3>
+                            </div>
+                            <div class="main_info">
+                                <p>
+                                    Hi! I'm Hussein (aka Hushm), your Sinai-based software engineer and web dev! ✨ I've got a thing for building awesome websites, making code magic happen, and even dabbling in UI/UX & graphic design. Oh, and a Computer Science degree from Suez University to prove it! 😉
+                                </p>
+                                <p>
+                                    Got a website that needs a revamp? An app idea you're itching to launch? Let's team up! I'll bring the coding skills, the design eye, and a whole lot of enthusiasm to turn your vision into a digital reality.  Let's chat and see what we can build together! 🚀
+                                </p>
+                                <div class="sign">
+                                    <img class="svg custom"
+                                         src="{% static "img/sign/Hussein Mukhtar.svg" %}"
+                                         alt="" />
+                                </div>
+                                <div class="lexal_tm_button">
+                                    <a href="{% static "Hussein.pdf" %}"><span>Download CV</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ABOUT -->
+            <!-- SERVICES -->
+            <div class="lexal_tm_section" id="services">
+                <div class="container">
+                    <div class="lexal_tm_main_title">
+                        <span>Awesome services</span>
+                        <h3>I gurantee you a high quality services</h3>
+                    </div>
+                    <div class="lexal_tm_services lexal_tm_waypoint_effect">
+                        <ul>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/python.svg" %} alt="" />
+                                    <h3>Python</h3>
+                                    <p>Seasoned Pythonista crafting elegant solutions, from data wrangling to web development.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/django.svg" %} alt="" />
+                                    <h3>Django</h3>
+                                    <p>Building clean and maintainable web applications, harnessing the framework's power.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/arch.svg" %} alt="" />
+                                    <h3>Linux & Deployment</h3>
+                                    <p>Linux guru and deployment ninja, automating development to production.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/figma.svg" %} alt="" />
+                                    <h3>Figma</h3>
+                                    <p>Crafting visually stunning and intuitive user experiences, Emphasizes both and artistic touch.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/web.svg" %} alt="" />
+                                    <h3>HTML, CSS & JS</h3>
+                                    <p>Maestro sculpting pixel-perfect interfaces, combining structural precision with visual flair.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner">
+                                    <img class="svg" src={% static "img/svg/teamwork.svg" %} alt="" />
+                                    <h3>Team Work</h3>
+                                    <p>Seamlessly integrating with diverse work styles, prioritizing shared goals over individual gain.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /SERVICES -->
+            <!-- PROJECTS -->
+            <div class="lexal_tm_section" id="projects">
+                <div class="container">
+                    <div class="lexal_tm_main_title">
+                        <span>Creative Projects</span>
+                        <h3>Check out my latest projects</h3>
+                        <a href={% url "project_list" %}>
+                            <h6>
+                                See More <i class="fa-solid fa-arrow-right"></i>
+                            </h6>
+                        </a>
+                    </div>
+                    <div class="lexal_tm_projects_wrap lexal_tm_waypoint_effect">
+                        {% include "includes/projects.html" with projects=projects %}
+                    </div>
+                </div>
+            </div>
+            <!-- /PROJECTS -->
+            <!-- NEWS -->
+            <div class="lexal_tm_section" id="news">
+                <div class="container">
+                    <div class="lexal_tm_main_title">
+                        <span>Latest News</span>
+                        <h3>Check out my latest news</h3>
+                        <a href={% url "news_list" %}>
+                            <h6>
+                                See More <i class="fa-solid fa-arrow-right"></i>
+                            </h6>
+                        </a>
+                    </div>
+                    <div class="lexal_tm_news_wrap lexal_tm_waypoint_effect">{% include "includes/item.html" with items=news %}</div>
+                </div>
+            </div>
+            <!-- /NEWS -->
+            <!-- CONTACT -->
+            <div class="lexal_tm_section" id="contact">
+                <div class="container">
+                    <div class="lexal_tm_main_title contact ">
+                        <span>Contact me</span>
+                        <h3>Get in touch with me</h3>
+                    </div>
+                    <div class="lexal_tm_contact_wrap lexal_tm_waypoint_effect">
+                        <div class="leftpart">
+                            <ul>
+                                <li>
+                                    <div class="inner">
+                                        <span><a href="tel:+201069115579">(+20) 10 6911 5579</a></span>
+                                        <img class="svg" src={% static "img/svg/telephone.svg" %} alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span><a href="mailto:HushmKun@outlook.com">HushmKun@outlook.com</a></span>
+                                        <img class="svg" src={% static "img/svg/envelope.svg" %} alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span><a href="https://x.com/Hushm_Kun">@Hushm_Kun</a></span>
+                                        <img class="svg" src={% static "img/svg/twitter.svg" %} alt="" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span><a href="https://github.com/HushmKun">@HushmKun</a></span>
+                                        <img class="svg" src={% static "img/svg/github.svg" %} alt="" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rightpart">
+                            <div class="contact_list_wrap">
+                                <form action="{% url "home" %}"
+                                      method="post"
+                                      class="contact_form"
+                                      id="contact_form">
+                                    <div class="returnmessage"
+                                         data-success="Your message has been received, We will contact you soon.">
+                                    </div>
+                                    <div class="empty_notice">
+                                        <span>Please Fill Required Fields</span>
+                                    </div>
+                                    <div class="first_row">
+                                        <div class="first">
+                                            <input id="name" type="text" placeholder="Your Name" />
+                                        </div>
+                                        <div class="second">
+                                            <input id="email" type="text" placeholder="Your Email" />
+                                        </div>
+                                    </div>
+                                    <div class="second_row">
+                                        <textarea id="message" placeholder="Your Message"></textarea>
+                                    </div>
+                                    <div class="lexal_tm_button">
+                                        <a id="send_message" href="#"><span>Submit</span></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /CONTACT -->
+        </div>
+    </div>
+    <!-- / WRAPPER ALL -->
 {% endblock content %}

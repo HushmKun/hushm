@@ -22,6 +22,8 @@ if DEBUG :
 
 INSTALLED_APPS = [
     "main",
+    'django.contrib.sites',
+    "django.contrib.sitemaps",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -30,6 +32,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "markdownx",
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -63,20 +67,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "portofolio.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -93,21 +89,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Africa/Cairo"
 
 USE_I18N = True
 
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
 
@@ -115,13 +103,13 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-STATIC_ROOT = "/var/www/portofolio/static"
+# STATIC_ROOT = BASE_DIR / "static"
 
-MEDIA_ROOT = "/var/www/portofolio/media"
+MEDIA_ROOT  = BASE_DIR / "media"
 
 MEDIA_URL = "/media/"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+if DEBUG:
+    MEDIA_ROOT = BASE_DIR / "media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

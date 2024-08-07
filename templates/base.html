@@ -1,9 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en"> 
-
 <head>
+
+<meta name="description" content="">
+<meta name="keywords" content="Web developer, ">
 
 <link rel="apple-touch-icon" sizes="180x180" href={% static 'img/favicon/apple-touch-icon.png' %}>
 <link rel="icon" type="image/png" sizes="32x32" href={% static 'img/favicon/favicon-32x32.png' %}>
@@ -11,10 +12,6 @@
 <link rel="manifest" href={% static 'img/favicon/site.webmanifest' %}>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<meta name="description" content="Hushm">
-<meta name="author" content="Hussein Mukhtar">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>{% block page_title %}{% endblock page_title %}</title>
@@ -27,16 +24,13 @@
 <link rel="stylesheet" type="text/css" href={% static 'css/plugins.css' %} />
 <link rel="stylesheet" type="text/css" href={% static 'css/style.css' %} />
 <!-- /STYLES -->
-
 </head>
 
 <body>
 
-	
 <div class="lexal_tm_loader-wrapper">
     <div class="loader"></div>
 </div>
-	
 {% block content %}
 
 {% endblock content %}
@@ -45,7 +39,6 @@
 <script src={% static 'js/jquery.js' %}></script>
 <script src={% static 'js/anime.js' %}></script>
 <script src={% static 'js/simpleParallax.js' %}></script>
-{% comment %} <script>var token = {% csrf_token %} ;</script> {% endcomment %}
 <script src={% static 'js/plugins.js' %}></script>
 <script src={% static 'js/init.js' %}></script>
 <!-- /SCRIPTS -->
