@@ -465,7 +465,7 @@ function lexal_tm_waypoints() {
 			}
 		});
 	}, {
-		threshold: window.matchMedia("(max-width: 767px)").matches ? 0.07 : 0.2 
+		threshold: 0.07
 	});
 	
 	waypointElements.forEach(element => {
@@ -488,7 +488,7 @@ function lexal_tm_waypoints2() {
 		}
 	  });
 	}, {
-	  threshold: 0.5  // 50% offset
+	  threshold: 0.3  // 50% offset
 	});
   
 	waypointElements.forEach(element => {
