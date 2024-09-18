@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     SECRET_KEY = environ["SECRET_KEY"]
     DEBUG = environ['DEBUG'] == "True"
-    ALLOWED_HOSTS =  environ['ALLOWED_HOSTS']
+    ALLOWED_HOSTS =  list(environ['ALLOWED_HOSTS'])
 except KeyError as e:
-    raise RuntimeError("Could not find a SECRET_KEY in environment") from e
+    raise RuntimeError("Some Environment Variables failed to be found.") from e
 
 if DEBUG : 
     ALLOWED_HOSTS.append('*')

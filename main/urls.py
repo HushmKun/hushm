@@ -3,7 +3,7 @@ from django.views.generic.base import TemplateView
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="home"),
+    path("", views.HomeView.as_view(), name="home"),
     path("news", views.news, name="news_list"),
     path("news/<slug:slug>", views.news_detail, name="news_detail"),
     path("projects", views.projects, name="project_list"),
@@ -13,7 +13,4 @@ urlpatterns = [
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
 
-    # path("api/news", views.api_news, name="news_api"),   
-    # path("api/projects", views.api_projects, name="projects_api"),   
-    # path("cv", views.more, name="projects_api"),   
 ]

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	lexal_tm_hero_overlay();	//* Done
 	lexal_tm_simpleParallax();	//* Done
 	lexal_tm_data_images();		//* Done
-	lexal_tm_contact_form();	//! Untested
 	lexal_tm_magnific_popup();	//? Not sure if possible
 	try {
 		lexal_tm_menu();			//* Done
@@ -235,71 +234,6 @@ function lexal_tm_data_images() {
 	  element.style.backgroundImage = `url(${url})`;
 	});
   }
-  
-// -----------------------------------------------------
-// ----------------    CONTACT FORM    -----------------
-// -----------------------------------------------------
-
-function lexal_tm_contact_form() {
-	"use strict";
-  
-	const contactForm = document.querySelector(".contact_form");
-	const sendMessageButton = document.querySelector(".contact_form #send_message");
-	const returnMessage = document.querySelector(".contact_form .returnmessage");
-	
-	if (contactForm == null || sendMessageButton == null || returnMessage == null){return;}
-	
-	const successMessage = returnMessage.dataset.success;
-	
-
-	sendMessageButton.addEventListener('click', (event) => {
-	  event.preventDefault();
-  
-	  const name = document.querySelector(".contact_form #name").value;
-	  const email = document.querySelector(".contact_form #email").value;
-	  const message = document.querySelector(".contact_form #message").value;
-	  const subject = document.querySelector(".contact_form #subject").value; 
-  
-	  returnMessage.textContent = ""; 
-  
-	  if (name === '' || email === '' || message === '') {
-		jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
-	  } else {
-		const formData = new FormData();
-		formData.append('ajax_name', name);
-		formData.append('ajax_email', email);
-		formData.append('ajax_message', message);
-		formData.append('ajax_subject', subject);
-  
-		fetch('modal/contact.php', {
-		  method: 'POST',
-		  body: formData
-		})
-		.then(response => response.text()) 
-		.then(data => {
-		  returnMessage.textContent = data;
-  
-		  if (returnMessage.querySelector('span.contact_error')) { 
-			// ... (Handle error display)
-			jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
-		  } else {
-			returnMessage.innerHTML += `<span class='contact_success'>${successMessage}</span>`;
-			// ... (Handle success display)
-			jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
-		  }
-  
-		  if (data === "") {
-			contactForm.reset();
-		  }
-		})
-		.catch(error => {
-		  // Handle AJAX errors
-		  console.error("Error submitting form:", error);
-		});
-	  }
-	}); 
-  }
-  
 	
 // -----------------------------------------------------
 // ------------    ANCHOR NAVIGATION    ----------------

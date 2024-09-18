@@ -1,10 +1,39 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from json import dumps
-from .models import News, Category, Project
+from .models import News, Category, Project, Message
+from django.views.generic import View
+from django.contrib import messages
 
 # Create your views here.
 
 ############## Main ##############
+class HomeView(View):
+
+    def get(self, request, *args, **kwargs):
+        news = News.objects.all()[:3]
+        project = Project.objects.all()[:6]
+        context = {
+            "news":news,
+            "projects" : project,
+            
+        }
+        
+        return render(request, 'main/index.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+        username = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+        feedback = Message(
+                username= username,
+                email=email,
+                message=message,
+        )
+        feedback.save()
+
+    
+
+        return render(request, 'main/index.html', context=context)
 
 def index(request):
     news = News.objects.all()[:3]

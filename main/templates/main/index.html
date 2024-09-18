@@ -216,25 +216,28 @@
                                       method="post"
                                       class="contact_form"
                                       id="contact_form">
-                                    <div class="returnmessage"
-                                         data-success="Your message has been received, We will contact you soon.">
+                                    <div class="returnmessage">
+                                        {% if messages %}
+                                        <span class="contact_success">Your message has been delivered, We will contact you soon.</span>
+                                        {% endif %}
                                     </div>
                                     <div class="empty_notice">
                                         <span>Please Fill Required Fields</span>
                                     </div>
                                     <div class="first_row">
                                         <div class="first">
-                                            <input id="name" type="text" placeholder="Your Name" />
+                                            <input name="name" id="name" type="text" placeholder="Your Name" />
                                         </div>
                                         <div class="second">
-                                            <input id="email" type="text" placeholder="Your Email" />
+                                            <input name="email" id="email" type="text" placeholder="Your Email" />
                                         </div>
                                     </div>
                                     <div class="second_row">
-                                        <textarea id="message" placeholder="Your Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
                                     </div>
                                     <div class="lexal_tm_button">
-                                        <a id="send_message" href="#"><span>Submit</span></a>
+                                        {% csrf_token %}
+                                        <input type="submit" value="Submit">
                                     </div>
                                 </form>
                             </div>

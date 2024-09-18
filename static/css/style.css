@@ -4,7 +4,7 @@
 /*	01) LEXAL BASE
 /*---------------------------------------------------*/
 :root {
-	--blue: #058FB3;
+	--blue: rgb(5, 144, 179);
 	--green: #04F9b9;
 	--grad_forty_five: linear-gradient(to bottom right, #0590b3ad, #04F9b9ad);
 	--grad_zero: linear-gradient(to right, #0590b3ad, #04F9b9ad);
@@ -506,7 +506,7 @@ img.svg{
 	clear: both;
 	float: left;
 }
-.lexal_tm_button a{
+.lexal_tm_button a, input[type=submit]{
 	text-decoration: none;
 	color: #000;
 	display: inline-block;
@@ -1057,7 +1057,7 @@ img.svg{
 	font-weight: 500;
 }
 .lexal_tm_contact_wrap .returnmessage{
-	color:#F52225;
+	color:#04F9b9;
 	margin-bottom: 7px;
 	text-align: left;
 	font-weight: 500;

@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from markdownx.models import MarkdownxField
 from django.shortcuts import reverse
+from django.utils.translation import gettext_lazy as _
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
@@ -54,4 +55,21 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse("Project_detail", args=[slug])
+
+class Message(models.Model):
+
+    name = models.CharField(_("Name"), max_length=50)
+    email = models.EmailField(_("Email"), max_length=254)
+    message = models.TextField(_("Message"))
+    Date = models.DateTimeField(_("Date_Time"), auto_now=False, auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Message")
+        verbose_name_plural = _("Messages")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("Message_detail", kwargs={"pk": self.pk})
 
